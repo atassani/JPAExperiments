@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" 
+	xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd
+	">
+	<persistence-unit name="Day12_JPA_eclipse_project"  transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>com.thomson.notraining.day12.domain.Product</class>
+
+		<properties>
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+			<property name="hibernate.show_sql" value="true" /> 
+
+			<!--  HSQLDB -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+      		<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+      		<property name="hibernate.connection.url" value="jdbc:hsqldb:hsql://localhost/"/>
+      		<property name="hibernate.connection.username" value="sa"/>
+      		<property name="hibernate.connection.password" value=""/>
+
+		</properties>
+	</persistence-unit>
+</persistence>

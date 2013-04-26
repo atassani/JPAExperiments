@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" 
+	xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd
+	">
+	<persistence-unit name="Day12_JPA_eclipse_project"  transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+<!--		<exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+
+		<class>com.thomson.notraining.day12.domain.Product</class>
+		
+<!--		<non-jta-data-source>java:/oracleDS</non-jta-data-source> -->
+
+		<properties>
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+			<property name="hibernate.show_sql" value="true" /> 
+      		<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+
+			<!--  HSQLDB -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+      		<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+      		<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:day12"/>
+<!--      		<property name="hibernate.connection.url" value="jdbc:hsqldb:hsql://localhost/"/>-->
+      		<property name="hibernate.connection.username" value="sa"/>
+      		<property name="hibernate.connection.password" value=""/>
+
+             <!--  ORACLE -->
+<!--			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />-->
+<!--      		<property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>-->
+<!--      		<property name="hibernate.connection.url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=pceudevdb6.isihost.com)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=pceudevdb7.isihost.com)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=pceudevdb8.isihost.com)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=TPHARMA)))"/>-->
+<!--      		<property name="hibernate.connection.username" value="notraining"/>-->
+<!--      		<property name="hibernate.connection.password" value="notraining"/>-->
+		</properties>
+	</persistence-unit>
+</persistence>
